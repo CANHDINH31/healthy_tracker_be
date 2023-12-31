@@ -3,7 +3,7 @@ const exerciseModel = require("../models/exercise.model");
 module.exports = {
   list: async (req, res) => {
     try {
-      let data = await exerciseModel.find({});
+      let data = await exerciseModel.find({}).populate("category");
       return res.status(200).json(data);
     } catch (error) {
       throw error;
@@ -16,7 +16,9 @@ module.exports = {
         ...req.body,
       });
 
-      const user = await exerciseModel.findById(req.params.id);
+      const user = await exerciseModel
+        .findById(req.params.id)
+        .populate("category");
 
       res.status(201).json(user);
     } catch (error) {
@@ -26,7 +28,9 @@ module.exports = {
 
   findById: async (req, res) => {
     try {
-      let health = await exerciseModel.findById(req.params.id);
+      let health = await exerciseModel
+        .findById(req.params.id)
+        .populate("category");
       return res.status(200).json(health);
     } catch (error) {
       throw error;

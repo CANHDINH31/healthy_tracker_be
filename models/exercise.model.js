@@ -21,6 +21,8 @@ const exerciseSchema = mongoose.Schema(
     videoLink: {
       type: String,
     },
+
+    category: { type: mongoose.Schema.Types.ObjectId, ref: "category" },
   },
   {
     timestamps: true,
