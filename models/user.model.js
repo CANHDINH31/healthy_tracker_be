@@ -12,6 +12,11 @@ const userSchema = mongoose.Schema(
       require: true,
     },
 
+    email: {
+      type: String,
+      require: true,
+    },
+
     fullName: {
       type: String,
       require: true,

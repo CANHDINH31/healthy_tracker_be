@@ -8,11 +8,13 @@ const {
   deleteUser,
   findUser,
   update,
+  resetPassword,
 } = require("../controllers/user.controller");
 
 const asyncMiddelware = require("../middlewares/asyncHandle");
 
 router.route("/login").post(asyncMiddelware(login));
+router.route("/reset-password").post(asyncMiddelware(resetPassword));
 router.route("/:id").put(asyncMiddelware(update));
 router.route("/:id").delete(asyncMiddelware(deleteUser));
 router.route("/:id").get(asyncMiddelware(findUser));

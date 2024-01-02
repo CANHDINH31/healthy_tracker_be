@@ -6,6 +6,20 @@ const formSchema = mongoose.Schema(
       type: String,
     },
 
+    // Code là mã sinh viên
+    code: {
+      type: String,
+    },
+
+    address: {
+      type: String,
+    },
+
+    // description: là trường tiền sử bệnh nền
+    description: {
+      type: String,
+    },
+
     phone: {
       type: String,
     },
@@ -15,6 +29,15 @@ const formSchema = mongoose.Schema(
     },
 
     age: {
+      type: Number,
+    },
+
+    height: {
+      type: Number,
+    },
+
+    // 1: male 2: female
+    gender: {
       type: Number,
     },
 
